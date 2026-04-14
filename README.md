@@ -41,8 +41,7 @@ Implemented with Firebase Authentication for secure, persistent user sessions. T
 
 This platform is optimized for deployment on Vercel. 
 
-### Live Application
-[Insert Vercel Deployment Link Here]
+### [Live Application](https://stock-sim-pro.vercel.app)
 
 ## Technical Architecture
 
