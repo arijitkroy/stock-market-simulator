@@ -1,40 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# StockSim Pro: Advanced Financial Trading Terminal
 
-## Getting Started
+StockSim Pro is a production-grade, real-time stock market simulation platform designed for high-fidelity trading practice. It provides users with a professional-grade environment to track global equities, execute trades with virtual capital, and monitor portfolio performance through sophisticated data visualization.
 
-First, run the development server:
+## Core Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Real-Time Market Intelligence
+Utilizes direct integration with global financial data providers to deliver live price updates and historical performance charts. The terminal supports a wide range of assets including US Equities, Indian Equities (NSE), and Cryptocurrencies.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Integrated Portfolio Management
+Comprehensive dashboard providing a real-time overview of net worth, cash liquidity, and active asset allocations. Features include:
+- Real-time Profit and Loss (P/L) tracking.
+- Average cost basis calculation per holding.
+- Performance color-coding for rapid visual assessment of market positions.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### 3. High-Efficiency Trading Interface
+A specialized trading terminal optimized for rapid execution:
+- Interactive historical charts powered by Recharts.
+- Robust search engine for identifying global symbols.
+- Quick Sell functionality allowing users to liquidate positions directly from the dashboard.
+- Virtual capital management starting with a default liquidity of ₹1,00,000.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 4. Enterprise-Grade Security
+Implemented with Firebase Authentication for secure, persistent user sessions. The platform utilizes Google OAuth for frictionless onboarding while maintaining backend security through Firebase Admin SDK verification.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Frontend
+- **Framework**: Next.js (Pages Router)
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Visualization**: Recharts
 
-## Learn More
+### Backend & Infrastructure
+- **Server**: Next.js API Routes (Node.js)
+- **Authentication**: Firebase Auth (Google OAuth 2.0)
+- **Database**: Firebase Firestore
+- **Data Source**: Yahoo Finance Reference API
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+This platform is optimized for deployment on Vercel. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Live Application
+[Insert Vercel Deployment Link Here]
 
-## Deploy on Vercel
+## Technical Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+The application is structured for scalability and low-latency interaction:
+- **Global Layout**: Handled in `_app.js` with persistent Navigation and Footer components.
+- **Middleware**: API requests are protected by a verification layer in `lib/auth.js`.
+- **Market Interface**: Real-time logic consolidated in `lib/market.js` to abstract provider complexities.
+- **Responsive Design**: Mobile-first architecture ensuring full terminal functionality across all device form factors.
